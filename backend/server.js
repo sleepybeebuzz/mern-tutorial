@@ -1,8 +1,13 @@
 //backend web framework here
 const express = require('express')
+const colors = require('colors')
 const dotenv = require('dotenv').config()
-const port = process.env.PORT || 5000
 const {errorHandler} = require('./middleware/error')
+const connectDB = require('./config/db')
+const port = process.env.PORT || 5000
+
+connectDB()
+
 const app = express()
 
 //to add middleware like body data 28:00
